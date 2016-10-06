@@ -1,5 +1,5 @@
 FROM ubuntu:15.10
-MAINTAINER Samuel Marks sam@sammarks.me
+MAINTAINER Laurent RICHARD easylo@gmail.com
 
 # Install packages.
 RUN apt-get update \
@@ -13,7 +13,7 @@ RUN apt-get update \
     && rm -r /var/lib/apt/lists/*
 
 # Set some environment variables.
-ENV DOCKER_HOST unix:///tmp/docker.sock
+ENV DOCKER_HOST unix:///var/run/docker.sock
 WORKDIR /backup/
 
 # Copy files and set working directory.
