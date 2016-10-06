@@ -1,9 +1,9 @@
-# Docker Rancher Backup
+# Docker Backup
 
 Gets a list of all containers running on the current rancher host and
 backs them up to Amazon S3 every three days. With the following environment
 variables:
-
+- `DOCKER_IMAGE`
 - `AWS_ACCESS_KEY`
 - `AWS_SECRET_KEY`
 - `AWS_BUCKET`
