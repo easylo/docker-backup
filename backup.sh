@@ -2,7 +2,7 @@
 
 for i in $(docker ps --format="{{ .ID }}"); do
 
-	CONTAINER=$(docker inspect --format="{{ json .Config.Image }}" $i | jq ".[\"$DOCKER_IMAGE\"]" | sed -e 's/^"//'  -e 's/"$//' -e 's/\//_/' )
+	CONTAINER=$(docker inspect --format="{{ json .Config.Image }}" $i | jq "\"$DOCKER_IMAGE\"" | sed -e 's/^"//'  -e 's/"$//' -e 's/\//_/' )
 
 	if [ "$CONTAINER" != "null" ]; then
 
